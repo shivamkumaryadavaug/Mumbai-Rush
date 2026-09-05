@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#101218">
+<title>MUMBAI RUSH</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="flash"></div>
+<div id="speedlines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<div id="ui">
+  <!-- ============ MAIN MENU ============ -->
+  <section id="menu" class="screen">
+    <div class="menu-inner glass">
+      <h1>MUMBAI<span>RUSH</span></h1>
+      <p class="tag">SURVIVE THE RUSH. OWN THE STREETS.</p>
+      <div class="menu-btns">
+        <button id="btnPlay" class="btn primary">▶&nbsp; PLAY</button>
+        <button id="btnChars" class="btn">CHARACTERS</button>
+        <button id="btnMissions" class="btn">MISSIONS</button>
+        <button id="btnAch" class="btn">ACHIEVEMENTS</button>
+        <button id="btnSettings" class="btn">SETTINGS</button>
+      </div>
+      <p class="best">🏆 BEST <b id="mBest">0</b> &nbsp;·&nbsp; 🪙 <b id="mCoins">0</b></p>
+    </div>
+    <p class="hint">← → swipe or keys to switch lanes · swipe ↑ jump · swipe ↓ slide</p>
+  </section>
+
+  <!-- ============ HUD ============ -->
+  <section id="hud" class="screen hidden">
+    <div class="hud-top">
+      <div class="stat glass"><label>SCORE</label><b id="hScore">0</b></div>
+      <div class="stat glass"><label>DIST</label><b id="hDist">0m</b></div>
+      <div class="stat glass"><label>COINS</label><b id="hCoins">0</b></div>
+    </div>
+    <div id="mult" class="hidden">x2</div>
+    <div id="powerups"></div>
+    <div id="popups"></div>
+    <div id="banner"></div>
+    <button id="btnPause" class="icon-btn glass">❚❚</button>
+  </section>
+
+  <!-- ============ GAME OVER ============ -->
+  <section id="gameover" class="screen hidden">
+    <div class="panel glass">
+      <h2>RUN OVER</h2>
+      <p id="goNew" class="newbest hidden">★ NEW BEST! ★</p>
+      <div class="stats">
+        <div><label>SCORE</label><b id="goScore">0</b></div>
+        <div><label>DISTANCE</label><b id="goDist">0m</b></div>
+        <div><label>COINS</label><b id="goCoins">0</b></div>
+        <div><label>BEST</label><b id="goBest">0</b></div>
+      </div>
+      <button id="btnRestart" class="btn primary">RUN AGAIN</button>
+      <button id="btnGoMenu" class="btn">MAIN MENU</button>
+    </div>
+  </section>
+
+  <!-- ============ PAUSE ============ -->
+  <section id="pause" class="screen hidden">
+    <div class="panel glass">
+      <h2>PAUSED</h2>
+      <button id="btnResume" class="btn primary">RESUME</button>
+      <button id="btnPauseMenu" class="btn">MAIN MENU</button>
+    </div>
+  </section>
+
+  <!-- ============ SETTINGS ============ -->
+  <section id="settings" class="screen hidden">
+    <div class="panel glass">
+      <h2>SETTINGS</h2>
+      <button id="setMusic" class="btn">MUSIC: ON</button>
+      <button id="setSfx" class="btn">SFX: ON</button>
+      <label class="slider-row">MUSIC VOL <input type="range" id="volMusic" min="0" max="100" value="70"></label>
+      <label class="slider-row">SFX VOL <input type="range" id="volSfx" min="0" max="100" value="80"></label>
+      <button class="btn back">← BACK</button>
+    </div>
+  </section>
+
+  <!-- ============ CHARACTERS ============ -->
+  <section id="characters" class="screen hidden">
+    <div class="panel glass wide">
+      <h2>CHARACTERS</h2>
+      <p class="coinbank">🪙 <b id="charCoins">0</b></p>
+      <div id="charList"></div>
+      <button class="btn back">← BACK</button>
+    </div>
+  </section>
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <section id="achievements" class="screen hidden">
+    <div class="panel glass wide">
+      <h2>ACHIEVEMENTS</h2>
+      <p class="coinbank" id="achCount">0 / 9</p>
+      <div id="achList"></div>
+      <button class="btn back">← BACK</button>
+    </div>
+  </section>
+
+  <!-- ============ MISSIONS ============ -->
+  <section id="missions" class="screen hidden">
+    <div class="panel glass wide">
+      <h2>MISSIONS</h2>
+      <div id="missionList"></div>
+      <button class="btn back">← BACK</button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="storage.js"></script>
+<script src="audio.js"></script>
+<script src="ui.js"></script>
+<script src="player.js"></script>
+<script src="world.js"></script>
+<script src="traffic.js"></script>
+<script src="game.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
